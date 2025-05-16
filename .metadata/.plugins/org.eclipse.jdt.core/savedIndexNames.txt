@@ -1,0 +1,9 @@
+INDEX VERSION 1.134+D:\KnapSack___Problem\.metadata\.plugins\org.eclipse.jdt.core
+725276562.index
+1404783256.index
+2715404602.index
+364891346.index
+1865797976.index
+2257456233.index
+1951589593.index
+648892996.index

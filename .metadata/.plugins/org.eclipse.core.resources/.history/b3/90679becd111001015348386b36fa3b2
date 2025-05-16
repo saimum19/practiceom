@@ -1,0 +1,7 @@
+package huffmancoding.algorithm;
+
+import java.util.Comparator;
+
+public class Comparator {
+
+}

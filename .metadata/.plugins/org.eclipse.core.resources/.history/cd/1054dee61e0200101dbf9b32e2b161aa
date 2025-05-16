@@ -1,0 +1,83 @@
+package ksp;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class FKPMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        ArrayList<Item> Items = new ArrayList<Item>(); 
+        
+        Item Item1 = new Item();
+        Item1.setObject(2);
+        Item1.setProfits(5);
+        Item1.setWeight(1);
+        
+
+        Item Item2 = new Item();
+        Item2.setObject(1);
+        Item2.setProfits(12);
+        Item2.setWeight(3);
+        
+
+        Item Item3 = new Item();
+        Item3.setObject(3);
+        Item3.setProfits(16);
+        Item3.setWeight(4);
+        
+
+        Item Item4 = new Item();
+        Item4.setObject(4);
+        Item4.setProfits(7);
+        Item4.setWeight(2);
+       
+
+        Item Item5 = new Item();
+        Item5.setObject(6);
+        Item5.setProfits(11);
+        Item5.setWeight(4);
+        
+
+        Item Item6 = new Item();
+        Item6.setObject(7);
+        Item6.setProfits(6);
+        Item6.setWeight(3);
+       
+
+        Item Item7 = new Item();
+        Item7.setObject(5);
+        Item7.setProfits(9);
+        Item7.setWeight(9);
+       
+        
+        Items.add(Item1);
+        Items.add(Item2);
+        Items.add(Item3);
+        Items.add(Item4);
+        Items.add(Item5);
+        Items.add(Item6);
+        Items.add(Item7);
+        
+        Collections.sort(Items,new FKPComparator());
+        
+        double capacity = 50;
+
+        double totalProfit = 0.0;
+
+        for (Item item : Items) {
+            if (capacity >= item.getWeight()) {
+                // Take full item
+                capacity -= item.getWeight();
+                totalProfit += item.getProfits();
+            } else {
+                // Take fraction of item
+                totalProfit += item.getProfits() * (capacity / item.getWeight());
+                break;
+            }
+        }
+
+        return;
+        
+	}
+
+}
